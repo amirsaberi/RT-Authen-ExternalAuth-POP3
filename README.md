@@ -12,13 +12,13 @@ https://bestpractical.com/request-tracker/
 
 Line 264 add: 
 
-.. code-block:: perl
+.. code-block:: 
 
     use RT::Authen::ExternalAuth::POP3;
 
 Line 568 make below changes to add pop3 as elsif
 
-.. code-block:: perl
+.. code-block:: 
 
     if ($config->{'type'} eq 'db') {
         $success = RT::Authen::ExternalAuth::DBI::GetAuth($service,$username,$password);
@@ -33,7 +33,7 @@ Line 568 make below changes to add pop3 as elsif
 
 Line 596
 
-.. code-block:: perl
+.. code-block:: 
 
     if ($config->{'type'} eq 'db') {
         $success = RT::Authen::ExternalAuth::DBI::UserExists($username,$service);
@@ -46,7 +46,7 @@ Line 596
 
 Line 644
 
-.. code-block:: perl
+.. code-block:: 
 
         } elsif ($config->{'type'} eq 'pop3') {
                 RT::Authen::ExternalAuth::POP3::UserExists($username,$service);
@@ -57,14 +57,15 @@ Line 644
 
 Line 792 
 
-.. code-block:: perl
+.. code-block:: 
 
             } elsif ($config->{'type'} eq 'pop3') {
                 ($found, %params) = RT::Authen::ExternalAuth::POP3::CanonicalizeUserInfo($service,$key,$value);
             }
 
 - Open your configuration file `50-debconf.pm` and add pop3 
-.. code-block:: perl
+
+.. code-block:: 
 
     Set($ExternalSettings, {
         # AN EXAMPLE LDAP SERVICE

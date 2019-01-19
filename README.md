@@ -11,11 +11,15 @@ https://bestpractical.com/request-tracker/
 - Make below changes to the ExternalAuth.pm file
 
 Line 264 add: 
-use RT::Authen::ExternalAuth::POP3;
+
+.. code-block:: perl
+
+    use RT::Authen::ExternalAuth::POP3;
 
 Line 568 make below changes to add pop3 as elsif
 
-`
+.. code-block:: perl
+
     if ($config->{'type'} eq 'db') {
         $success = RT::Authen::ExternalAuth::DBI::GetAuth($service,$username,$password);
         $RT::Logger->debug("DBI password validation result:",$success);
@@ -26,10 +30,11 @@ Line 568 make below changes to add pop3 as elsif
         $success = RT::Authen::ExternalAuth::POP3::GetAuth($service,$username,$password);
         $RT::Logger->debug("POP3 password validation result:",$success);
     }
-`
 
 Line 596
-`
+
+.. code-block:: perl
+
     if ($config->{'type'} eq 'db') {
         $success = RT::Authen::ExternalAuth::DBI::UserExists($username,$service);
     } elsif ($config->{'type'} eq 'pop3') {
@@ -38,24 +43,29 @@ Line 596
     } elsif ($config->{'type'} eq 'ldap') {
         $success = RT::Authen::ExternalAuth::LDAP::UserExists($username,$service);
     }
-`
+
 Line 644
-`
+
+.. code-block:: perl
+
         } elsif ($config->{'type'} eq 'pop3') {
                 RT::Authen::ExternalAuth::POP3::UserExists($username,$service);
                 $user_disabled = 0;
         }
-`
+        
 - Make below changes to the `Users.pm`
 
 Line 792 
-`
+
+.. code-block:: perl
+
             } elsif ($config->{'type'} eq 'pop3') {
                 ($found, %params) = RT::Authen::ExternalAuth::POP3::CanonicalizeUserInfo($service,$key,$value);
             }
-`
+
 - Open your configuration file `50-debconf.pm` and add pop3 
-`
+.. code-block:: perl
+
     Set($ExternalSettings, {
         # AN EXAMPLE LDAP SERVICE
         'POP3'  =>      {
@@ -72,7 +82,7 @@ Line 792
 
         },
     } );
-`
+
 
 # Improvment
 Check if pop3 user exist is bypassed on this script.

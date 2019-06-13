@@ -69,7 +69,7 @@ Provides the LDAP implementation for L<RT::Authen::ExternalAuth>.
         # AN EXAMPLE LDAP SERVICE
         'POP3'  =>      {
                 'type'   => 'pop3',
-                'server' => 'prmail.shatel.ir',
+                'server' => '1.1.1.1',
             'attr_match_list' => [
                 'Name',
                 'EmailAddress'

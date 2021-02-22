@@ -61,12 +61,12 @@ RT::Authen::ExternalAuth::POP3 - POP3 source for RT authentication
 
 =head1 DESCRIPTION
 
-Provides the LDAP implementation for L<RT::Authen::ExternalAuth>.
+Provides the POP3 implementation for L<RT::Authen::ExternalAuth>.
 
 =head1 SYNOPSIS
 
     Set($ExternalSettings, {
-        # AN EXAMPLE LDAP SERVICE
+        # AN EXAMPLE POP3 SERVICE
         'POP3'  =>      {
                 'type'   => 'pop3',
                 'server' => '1.1.1.1',

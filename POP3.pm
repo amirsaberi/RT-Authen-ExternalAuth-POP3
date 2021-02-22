@@ -5,7 +5,7 @@
 # This software is Copyright (c) 1996-2016 Best Practical Solutions, LLC
 #                                          <sales@bestpractical.com>
 #
-# Developed by Amirhossein Saberi - amirsaberi@me.com
+# Developed by Amirhossein Saberi - https://github.com/amirsaberi
 #
 # (Except where explicitly superseded by other copyright notices)
 #
